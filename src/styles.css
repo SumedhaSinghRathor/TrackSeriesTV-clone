@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --color-dark-blue: #314158;
+}
+
+html,
+body {
+  font-family: 'Manrope', sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-dark-blue);
+  color: oklch(28.2% 0.091 267.935);
+}
