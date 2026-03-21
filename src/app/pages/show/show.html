@@ -35,10 +35,10 @@
         </select>
     </div>
 </section>
-<section class="bg-slate-200 p-2 flex justify-center gap-2">
+<section class="bg-slate-200 p-2 flex justify-center gap-4">
     <a [routerLink]="['/show', c.season]" *ngFor="let c of showKSK.seasons"
         class="aspect-11/16 w-38 rounded shadow-2xl overflow-clip"
-        [ngClass]="{'border-4 border-blue-500': c.season === (id + 1)}">
+        [ngClass]="{'outline-4 outline-blue-500': c.season === (id + 1)}">
         <img [src]="c.poster" class="object-fill">
     </a>
 </section>
@@ -53,9 +53,9 @@
             <div class="overflow-clip">
                 <img src={{ep.epThumbnail}} alt="" class="group-hover:scale-105 transition-all">
             </div>
-            <div class="p-2 border-t-3 border-blue-950 text-sm">
+            <div class="p-2 border-t-3 border-blue-950 text-sm cursor-pointer" (click)="showEpInfo(ep)">
                 <p class="font-bold line-clamp-1">
-                    <span class="text-amber-500">1x{{ (i+1).toString().padStart(2, '0') }}</span>
+                    <span class="text-amber-500">{{id + 1}}x{{ (i+1).toString().padStart(2, '0') }}</span>
                     {{ep.epTitle}}
                 </p>
                 <p>
@@ -65,5 +65,5 @@
             </div>
         </div>
     </section>
-    <app-extra></app-extra>
+    <app-extra [episodeData]="selectedEpisode"></app-extra>
 </section>
