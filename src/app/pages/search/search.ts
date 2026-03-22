@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
-import { NgForOf } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { NgForOf, NgIf } from '@angular/common';
 import { SearchItem } from '../../components/search-item/search-item';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NgForOf, SearchItem],
+  imports: [NgForOf, SearchItem, NgIf],
   templateUrl: './search.html',
 })
-export class Search {
-  pieces = [
+export class Search implements OnInit {
+  allpieces = [
     {
       title: "Tamon's B-Side",
       cover: 'https://static.trackseries.tv/banners/1iTCxEIK1xlmIXjHcLjt0UyOU8w_medium.jpg',
@@ -63,4 +64,32 @@ export class Search {
         'Nanami was just a normal high school girl down on her luck until a stranger’s lips marked her as the new Land God and turned her world upside down. Now, she’s figuring out the duties of a deity with the help of Tomoe, a reformed fox demon who reluctantly becomes her familiar in a contract sealed with a kiss. The new responsibilities—and boys—are a lot to handle, like the crow demon masquerading as a gorgeous pop idol and the adorable snake spirit who’s chosen the newly minted god to be his bride. As the headstrong Tomoe tries to whip her into shape, Nanami finds that love just might have cute, pointed fox ears. With romance in the air, will the human deity be able to prove herself worthy of her new title?',
     },
   ];
+
+  pieces = [...this.allpieces];
+
+  constructor(
+    public route: ActivatedRoute,
+    private router: Router,
+  ) {}
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      const searchItem = params['query'] || '';
+
+      if (!searchItem.trim()) {
+        this.pieces = [];
+      } else {
+        const lowerValue = searchItem.toLowerCase();
+        this.pieces = this.allpieces.filter((p) => p.title.toLowerCase().includes(lowerValue));
+      }
+    });
+  }
+
+  filterPieces(value: string) {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { query: value || null },
+      queryParamsHandling: 'merge',
+    });
+  }
 }

@@ -1,16 +1,21 @@
 <section class="aspect-12/1 flex justify-center items-center mt-13">
-    <form class="bg-white border border-blue-100 w-80 aspect-8/1 flex items-center rounded">
-        <input type="text" class="grow px-2 focus:outline-none text-sm">
-        <i class='bx bx-search text-blue-950 text-2xl p-1'></i>
+    <form class="bg-white border border-blue-100 w-80 aspect-8/1 flex items-center rounded"
+        (submit)="filterPieces(searchInput.value); $event.preventDefault()">
+        <input #searchInput type="text" class="grow px-2 focus:outline-none text-sm"
+            [value]="route.snapshot.queryParams['query'] || ''">
+        <i class='bx bx-search text-blue-950 text-3xl'></i>
     </form>
 </section>
 <section class="bg-slate-100 rounded-t-2xl overflow-clip">
-    <div class="text-sm pt-4 flex justify-center">
+    <div *ngIf="searchInput.value === ''" class="text-sm pt-4 flex justify-center">
         <p class="border border-blue-100 bg-white w-fit px-3 rounded-full"><b>{{pieces.length}}</b> results for
-            <b>Tamon</b>
+            <b class="italic">{{searchInput.value}}</b>
         </p>
     </div>
     <div class="grid grid-cols-1 2xl:grid-cols-4 xl:grid-cols-2 gap-6 p-6">
+        <div *ngIf="pieces.length === 0" class="col-span-2 text-center h-[54vh]">
+            <h1 class="font-bold text-6xl">Search for more shows</h1>
+        </div>
         <app-search-item *ngFor="let p of pieces" [show]="p"></app-search-item>
     </div>
 </section>
