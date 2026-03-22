@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NgForOf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { SearchItem } from '../../components/search-item/search-item';
 
 @Component({
   selector: 'app-search',
-  imports: [NgForOf, RouterLink],
+  standalone: true,
+  imports: [NgForOf, SearchItem],
   templateUrl: './search.html',
 })
 export class Search {
@@ -12,6 +13,7 @@ export class Search {
     {
       title: "Tamon's B-Side",
       cover: 'https://static.trackseries.tv/banners/1iTCxEIK1xlmIXjHcLjt0UyOU8w_medium.jpg',
+      banner: 'https://static.trackseries.tv/banners/series/451101/banners/6934d22e935b4_large.jpg',
       tvStation: 'Tokyo MX',
       year: 2026,
       followers: 18,
@@ -21,6 +23,7 @@ export class Search {
     {
       title: 'Journal with Witch',
       cover: 'https://static.trackseries.tv/banners/g6lhU9a8YOWKJyfJ7J2aajzKm4k_medium.jpg',
+      banner: 'https://static.trackseries.tv/banners/series/449723/banners/695a9e0d6a7cd_large.jpg',
       tvStation: 'BS Asahi',
       year: 2026,
       followers: 20,
@@ -30,6 +33,7 @@ export class Search {
     {
       title: 'Hana-Kimi',
       cover: 'https://static.trackseries.tv/banners/wCZn0Is62Tx4HC9WuFGYysjeHCx_medium.jpg',
+      banner: 'https://static.trackseries.tv/banners/placeholder/serie_banner.png',
       tvStation: 'Tokyo MX',
       year: 2026,
       followers: 11,
@@ -39,6 +43,8 @@ export class Search {
     {
       title: 'Lovely★Complex',
       cover: 'https://static.trackseries.tv/banners/dhadiTPPbM1m6eyBKwMr10CYLut_medium.jpg',
+      banner:
+        'https://static.trackseries.tv/banners/https://assets.fanart.tv/fanart/lovely-complex-67874dd261fd8_large.jpg',
       tvStation: 'CBC',
       year: 2007,
       followers: 11,
@@ -48,6 +54,8 @@ export class Search {
     {
       title: 'Kamisama Kiss',
       cover: 'https://static.trackseries.tv/banners/6SYc4QlshFxAYsK33njymMUBfJD_medium.jpg',
+      banner:
+        'https://static.trackseries.tv/banners/https://assets.fanart.tv/fanart/kamisama-hajimemashita-6396faa6de993_large.jpg',
       tvStation: 'TV Tokyo',
       year: 2015,
       followers: 123,
