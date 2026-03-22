@@ -3,7 +3,7 @@
 </div>
 <div class="aspect-5/2 bg-black/60 text-white text-5xl font-bold flex flex-col gap-4 items-center justify-center">
     <h1>{{showKSK.title}}</h1>
-    <h2>({{showKSK.startedAiring.getFullYear()}})</h2>
+    <h2>({{showKSK.seasons[0].startedAiring.getFullYear()}})</h2>
 </div>
 <section class="bg-slate-50 grid grid-cols-[2fr_3fr_2fr] gap-x-16 p-3 -mt-4 rounded-t-2xl">
     <div class="flex justify-end h-46">
@@ -12,8 +12,8 @@
     <div>
         <div class="text-xl mb-2 flex gap-2 items-center">
             <p>
-                <b>{{showKSK.startedAiring | date: 'EEEE'}}s</b> at <b>{{showKSK.startedAiring | date: 'h:mm a' |
-                    uppercase}}</b> on <b>{{showKSK.network}}</b>
+                <b>{{showKSK.seasons[0].startedAiring | date: 'EEEE'}}s</b> at <b>{{showKSK.seasons[0].startedAiring|
+                    date: 'h:mm a' | uppercase}}</b> on <b>{{showKSK.network}}</b>
             </p>
             <i class='bx bxs-share-alt opacity-80'></i>
         </div>
@@ -59,8 +59,8 @@
                     {{ep.epTitle}}
                 </p>
                 <p>
-                    {{showKSK.startedAiring | date: 'h:mm a' | uppercase}}
-                    {{getEpisodeDate(showKSK.startedAiring, i) | date: 'EEEE, MMMM d, y'}}
+                    {{showKSK.seasons[id].startedAiring | date: 'h:mm a' | uppercase}}
+                    {{getEpisodeDate(showKSK.seasons[id].startedAiring, id, i) | date: 'EEEE, MMMM d, y'}}
                 </p>
             </div>
         </div>

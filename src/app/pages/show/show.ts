@@ -29,12 +29,12 @@ export class Show implements OnInit {
     contentRating: 'TV-PG',
     showStatus: 'Ended',
     followers: 123,
-    startedAiring: new Date(2015, 0, 4, 20, 30, 0),
     description:
       'Nanami was just a normal high school girl down on her luck until a stranger’s lips marked her as the new Land God and turned her world upside down. Now, she’s figuring out the duties of a deity with the help of Tomoe, a reformed fox demon who reluctantly becomes her familiar in a contract sealed with a kiss. The new responsibilities—and boys—are a lot to handle, like the crow demon masquerading as a gorgeous pop idol and the adorable snake spirit who’s chosen the newly minted god to be his bride. As the headstrong Tomoe tries to whip her into shape, Nanami finds that love just might have cute, pointed fox ears. With romance in the air, will the human deity be able to prove herself worthy of her new title?',
     seasons: [
       {
         season: 1,
+        startedAiring: new Date(2012, 9, 1, 20, 30, 0),
         poster: 'https://static.trackseries.tv/banners/6SYc4QlshFxAYsK33njymMUBfJD_medium.jpg',
         episodes: [
           {
@@ -132,6 +132,7 @@ export class Show implements OnInit {
       },
       {
         season: 2,
+        startedAiring: new Date(2015, 0, 4, 20, 30, 0),
         poster: 'https://static.trackseries.tv/banners/ntoJF5ad7cxv7zIbe7y5GGMZaXl_medium.jpg',
         episodes: [
           {
@@ -208,6 +209,8 @@ export class Show implements OnInit {
             epTitle: 'The God Goes Back to Being a Child',
             epThumbnail:
               'https://static.trackseries.tv/banners/a5t4yRqEX4DpaZnu8n0w6trK0e1_small.jpg',
+            epDesc:
+              'Kirihito, aka Akura-oh, has not given up on getting his body back from the Netherworld. But in the meantime, Nanami and her familiars go to see the Year God, to receive a talisman for the new year.',
           },
           {
             epTitle: 'The God Recieves a Marriage Proposal',
@@ -221,8 +224,8 @@ export class Show implements OnInit {
     ],
   };
 
-  getEpisodeDate(baseDate: string | Date, index: number): Date {
-    const date = new Date(this.showKSK.startedAiring);
+  getEpisodeDate(baseDate: string | Date, id: number, index: number): Date {
+    const date = new Date(this.showKSK.seasons[id].startedAiring);
     date.setDate(date.getDate() + index * 7);
     return date;
   }
