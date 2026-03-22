@@ -12,7 +12,8 @@
     <div>
         <div class="text-xl mb-2 flex gap-2 items-center">
             <p>
-                <b>{{show?.seasons?.[0]?.startedAiring | date: 'EEEE'}}s</b> at <b>{{show?.seasons?.[0]?.startedAiring |
+                <b>{{show?.seasons?.[0]?.episodes?.[0]?.epAired | date: 'EEEE'}}s</b> at
+                <b>{{show?.seasons?.[0]?.episodes?.[0]?.epAired |
                     date: 'h:mm a' | uppercase}}</b> on <b>{{show?.network}}</b>
             </p>
             <i class="bx bxs-share-alt opacity-80"></i>
@@ -46,22 +47,7 @@
         <i class="bx bx-grid-alt text-white bg-blue-950 text-lg p-2 rounded"></i>
     </div>
     <section class="grid grid-cols-4 gap-6">
-        <div *ngFor="let ep of show?.seasons?.[currentSeason - 1]?.episodes"
-            class="shadow-2xl aspect-5/3 group rounded-xl overflow-clip">
-            <div class="overflow-clip">
-                <img src={{ep.epThumbnail}} alt="">
-            </div>
-            <div class="p-2 border-t-3 border-blue-950 text-sm">
-                <p class="font-bold line-clamp-1">
-                    <span class="text-amber-500">{{currentSeason}}x{{ep.epNo.toString().padStart(2,
-                        '0')}}</span> {{ep.epTitle}}
-                </p>
-                <p>
-                    {{show?.seasons?.[currentSeason - 1]?.startedAiring| date: 'h:mm a' | uppercase}} {{
-                    getEpisodeDate(show?.seasons?.[currentSeason - 1]?.startedAiring, ep.epNo) | date: 'EEEE, MMMM d, y'
-                    }}
-                </p>
-            </div>
-        </div>
+        <app-ep-grid *ngFor="let ep of show?.seasons?.[currentSeason - 1]?.episodes" [episode]="ep"
+            [currentSeason]="currentSeason"></app-ep-grid>
     </section>
 </div>

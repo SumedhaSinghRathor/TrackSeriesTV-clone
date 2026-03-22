@@ -3,4 +3,5 @@ export class Episode {
   epTitle: string = '';
   epThumbnail: string = '';
   epDesc: string = '';
+  epAired: string = '';
 }

@@ -3,11 +3,12 @@ import { Show } from '../../models/show.model';
 import { CommonModule, DatePipe, UpperCasePipe } from '@angular/common';
 import { ShowApi } from '../../service/show-api';
 import { ActivatedRoute } from '@angular/router';
+import { EpGrid } from '../../components/ep-grid/ep-grid';
 
 @Component({
   selector: 'app-show-page',
   standalone: true,
-  imports: [CommonModule, DatePipe, UpperCasePipe],
+  imports: [CommonModule, DatePipe, UpperCasePipe, EpGrid],
   templateUrl: './show-page.html',
 })
 export class ShowPage implements OnInit {
