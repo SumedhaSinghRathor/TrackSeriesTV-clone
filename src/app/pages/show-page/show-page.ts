@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Show } from '../../models/show.model';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, UpperCasePipe } from '@angular/common';
 import { ShowApi } from '../../service/show-api';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-page',
   standalone: true,
-  imports: [DatePipe],
+  imports: [CommonModule, DatePipe, UpperCasePipe],
   templateUrl: './show-page.html',
 })
 export class ShowPage implements OnInit {
@@ -16,11 +16,14 @@ export class ShowPage implements OnInit {
   constructor(
     private showService: ShowApi,
     private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.loadShow(id);
+    this.route.paramMap.subscribe((params) => {
+      const id = Number(params.get('id'));
+      if (id) this.loadShow(id);
+    });
   }
 
   loadShow(id: number): void {
@@ -28,10 +31,18 @@ export class ShowPage implements OnInit {
       next: (data) => {
         this.show = data;
         console.log(data);
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error loading show: ', err);
       },
     });
+  }
+
+  getEpisodeDate(startDatestr: string | undefined, epNo: number): Date | null {
+    if (!startDatestr) return null;
+    const date = new Date(startDatestr);
+    date.setDate(date.getDate() + (epNo - 1) * 7);
+    return date;
   }
 }
