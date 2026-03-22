@@ -1,1 +1,75 @@
-<section class="bg-white">myshows works!</section>
+<div class="mt-12 bg-black/80 text-white py-16 flex flex-col gap-6 items-center">
+    <h1 class="text-5xl font-bold">My Shows</h1>
+    <div class="w-11/12 max-w-6xl justify-center gap-4 grid md:grid-cols-3 grid-cols-1 text-blue-950">
+        <div class="border border-white grow p-6 rounded-xl bg-white/90 hover:bg-white">
+            <div class="text-sm font-medium flex justify-between items-center">
+                <p>Up To Date</p>
+                <i class='bx bx-check-double text-lg opacity-80'></i>
+            </div>
+            <div class="text-3xl font-bold">{{allpieces.length}}</div>
+            <div class="text-xs mt-4">44% total of 132 TV Shows followed</div>
+        </div>
+        <div class="border border-white grow p-6 rounded-xl bg-white/90 hover:bg-white">
+            <div class="text-sm font-medium flex justify-between items-center">
+                <p>Watched Episodes</p>
+                <i class='bx bx-low-vision text-lg opacity-80'></i>
+            </div>
+            <div class="text-3xl font-bold">23</div>
+            <div class="text-xs mt-4">60% total of 3980 aired episodes</div>
+        </div>
+        <div class="border border-white grow p-6 rounded-xl bg-white/90 hover:bg-white">
+            <div class="text-sm font-medium flex justify-between items-center">
+                <p>Time Spent</p>
+                <i class='bx bx-history text-lg opacity-80'></i>
+            </div>
+            <div class="text-3xl font-bold">45d 21h 5m</div>
+            <div class="text-xs mt-4">You still need 44d 15h 21m to watch all your shows</div>
+        </div>
+    </div>
+</div>
+<section class="bg-slate-100 p-6 rounded-t-2xl -mt-4">
+    <div class="flex flex-col gap-2">
+        <div class="flex justify-between">
+            <div class="">
+                <input type="text"><button>Status</button>
+            </div>
+            <div class="flex gap-6">
+                <p>5/5 shows</p> <button><i class='bx bx-slider'></i>View</button>
+            </div>
+        </div>
+        <div class="">
+            <table class="w-full bg-white rounded-xl shadow-2xl">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Episodes</th>
+                        <th>Year Released</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let show of allpieces"
+                        class="border-t border-blue-100 hover:bg-blue-100 transition-colors group">
+                        <td class="py-1">
+                            <div class="w-3xs overflow-hidden">
+                                <img src={{show.banner}} alt="" class="group-hover:scale-105 transition-transform">
+                            </div>
+                        </td>
+                        <td>{{show.title}}</td>
+                        <td class="flex justify-center items-center">
+                            <select name="" id=""
+                                class="border border-blue-100 rounded p-1 bg-white mt-4 shadow-2xl focus:outline-0">
+                                <option value="">Add to your Wishlist</option>
+                                <option value="">Following</option>
+                                <option value="">Move to abandonded</option>
+                                <option value="">Stop following</option>
+                            </select>
+                        </td>
+                        <td><span class="bg-blue-950 text-white px-2 rounded-full">{{show.episodes}}</span></td>
+                        <td>{{show.year}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

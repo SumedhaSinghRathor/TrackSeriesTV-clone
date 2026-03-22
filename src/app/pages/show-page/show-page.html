@@ -1,0 +1,7 @@
+<div class="absolute -top-15 -z-10">
+    <img [src]="show?.bgBanner" alt="">
+</div>
+<div class="aspect-5/2 bg-black/60 text-white text-5xl font-bold flex flex-col gap-4 items-center justify-center">
+    <h1>{{show?.title}}</h1>
+    <h2>({{show?.seasons?.[0]?.startedAiring | date: 'yyyy'}})</h2>
+</div>

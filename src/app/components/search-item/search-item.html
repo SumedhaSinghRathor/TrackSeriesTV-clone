@@ -1,16 +1,17 @@
 <div class="bg-white border border-blue-100 rounded-lg flex sm:flex-row flex-col shadow-xl group text-blue-950">
-    <picture [routerLink]="['/show', 1]" class="cursor-pointer w-fit">
-        <source media="(min-width: 640px)" [srcset]="show.cover"
+    <picture class="cursor-pointer w-fit">
+        <source media="(min-width: 640px)" [srcset]="show.seasons[0].poster"
             class="h-75 aspect-2/3 rounded-lg group-hover:scale-105 transition-all shadow-2xl cursor-pointer">
-        <img [ngSrc]="show.banner" alt=""
+        <img [ngSrc]="show.smallBanner" alt=""
             class="rounded-lg group-hover:scale-105 transition-all shadow-2xl cursor-pointer" width="375" height="32">
     </picture>
     <div class="w-full flex flex-col">
         <div class="p-3 grow">
-            <a [routerLink]="['/show', 1]">
+            <a [routerLink]="goToShow(show)">
                 <h3 class="text-2xl font-bold">{{show.title}}</h3>
             </a>
-            <p class="text-sm">{{show.tvStation}} | {{show.year}} | {{show.followers}} followers</p>
+            <p class="text-sm">{{show.network}} | {{show.seasons[0].startedAiring | date: 'yyyy'}} | {{show.followers}}
+                followers</p>
             <p class="text-sm mt-2 line-clamp-5">{{show.description}}</p>
         </div>
         <div class="p-2 flex sm:justify-end justify-center">
