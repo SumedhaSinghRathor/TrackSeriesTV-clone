@@ -42,23 +42,24 @@
 </section>
 <div class="bg-slate-50 p-6">
     <div class="flex items-center gap-4 mb-4">
-        <h2 class="text-2xl font-bold grow">Season {{show?.seasons?.[0]?.season}}</h2>
+        <h2 class="text-2xl font-bold grow">Season {{currentSeason}}</h2>
         <i class="bx bx-grid-alt text-white bg-blue-950 text-lg p-2 rounded"></i>
     </div>
     <section class="grid grid-cols-4 gap-6">
-        <div *ngFor="let ep of show?.seasons?.[0]?.episodes"
+        <div *ngFor="let ep of show?.seasons?.[currentSeason - 1]?.episodes"
             class="shadow-2xl aspect-5/3 group rounded-xl overflow-clip">
             <div class="overflow-clip">
                 <img src={{ep.epThumbnail}} alt="">
             </div>
             <div class="p-2 border-t-3 border-blue-950 text-sm">
                 <p class="font-bold line-clamp-1">
-                    <span class="text-amber-500">{{show?.seasons?.[0]?.season}}x{{ep.epNo.toString().padStart(2,
+                    <span class="text-amber-500">{{currentSeason}}x{{ep.epNo.toString().padStart(2,
                         '0')}}</span> {{ep.epTitle}}
                 </p>
                 <p>
-                    {{show?.seasons?.[0]?.startedAiring| date: 'h:mm a' | uppercase}} {{
-                    getEpisodeDate(show?.seasons?.[0]?.startedAiring, ep.epNo) | date: 'EEEE, MMMM d, y' }}
+                    {{show?.seasons?.[currentSeason - 1]?.startedAiring| date: 'h:mm a' | uppercase}} {{
+                    getEpisodeDate(show?.seasons?.[currentSeason - 1]?.startedAiring, ep.epNo) | date: 'EEEE, MMMM d, y'
+                    }}
                 </p>
             </div>
         </div>

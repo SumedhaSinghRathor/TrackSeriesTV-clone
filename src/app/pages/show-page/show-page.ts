@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShowPage implements OnInit {
   show?: Show;
+  currentSeason: any;
 
   constructor(
     private showService: ShowApi,
@@ -23,6 +24,9 @@ export class ShowPage implements OnInit {
     this.route.paramMap.subscribe((params) => {
       const id = Number(params.get('id'));
       if (id) this.loadShow(id);
+
+      const season = Number(params.get('season'));
+      if (season) this.currentSeason = season;
     });
   }
 

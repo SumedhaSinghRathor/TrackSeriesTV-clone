@@ -12,5 +12,5 @@ export const routes: Routes = [
   { path: 'calendar', component: Calendar },
   { path: 'explore', component: Explore },
   { path: 'search', component: Search },
-  { path: 'shows/:id/:slug', component: ShowPage },
+  { path: 'shows/:id/:slug/:season', component: ShowPage },
 ];

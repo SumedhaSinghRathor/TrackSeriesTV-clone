@@ -1,5 +1,5 @@
 <div class="bg-white border border-blue-100 rounded-lg flex sm:flex-row flex-col shadow-xl group text-blue-950">
-    <picture class="cursor-pointer w-fit">
+    <picture class="cursor-pointer w-fit" [routerLink]="goToShow(show)">
         <source media="(min-width: 640px)" [srcset]="show.seasons[0].poster"
             class="h-75 aspect-2/3 rounded-lg group-hover:scale-105 transition-all shadow-2xl cursor-pointer">
         <img [ngSrc]="show.smallBanner" alt=""
