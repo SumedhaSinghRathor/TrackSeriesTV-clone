@@ -36,8 +36,10 @@
         </select>
     </div>
 </section>
-<section class="bg-slate-200 p-2 flex justify-center gap-2">
-    <a *ngFor="let cover of show?.seasons" class="aspect-11/16 w-38 rounded shadow-2xl overflow-clip">
+<section class="bg-slate-200 p-2 flex justify-center gap-4">
+    <a *ngFor="let cover of show?.seasons; let i = index" class="aspect-11/16 w-38 rounded shadow-2xl overflow-clip"
+        [class.ring-blue-500]="currentSeason - 1 === i" [class.ring-4]="currentSeason - 1 === i"
+        [routerLink]="['/shows', show?.id, makeSlug(show?.title), i + 1]">
         <img src={{cover.poster}} alt="">
     </a>
 </section>

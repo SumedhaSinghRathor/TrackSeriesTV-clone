@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Show } from '../../models/show.model';
 import { CommonModule, DatePipe, UpperCasePipe } from '@angular/common';
 import { ShowApi } from '../../service/show-api';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EpGrid } from '../../components/ep-grid/ep-grid';
 import { EpList } from '../../components/ep-list/ep-list';
 import { Extra } from '../../components/extra/extra';
@@ -10,7 +10,7 @@ import { Extra } from '../../components/extra/extra';
 @Component({
   selector: 'app-show-page',
   standalone: true,
-  imports: [CommonModule, DatePipe, UpperCasePipe, EpGrid, EpList, Extra],
+  imports: [CommonModule, DatePipe, UpperCasePipe, EpGrid, EpList, Extra, RouterLink],
   templateUrl: './show-page.html',
 })
 export class ShowPage implements OnInit {
@@ -53,5 +53,12 @@ export class ShowPage implements OnInit {
     const date = new Date(startDatestr);
     date.setDate(date.getDate() + (epNo - 1) * 7);
     return date;
+  }
+
+  makeSlug(title: any): string {
+    return title
+      .toLocaleLowerCase()
+      .replace(/[^a-zA-Z0-9]/g, '-')
+      .replace(/(^-|-$)/g, '');
   }
 }
