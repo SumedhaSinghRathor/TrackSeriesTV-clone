@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Episode } from '../../models/episode.model';
 import { DatePipe } from '@angular/common';
 
@@ -10,4 +10,10 @@ import { DatePipe } from '@angular/common';
 export class EpGrid {
   @Input() episode?: Episode;
   @Input() currentSeason!: any;
+
+  @Output() infoRequested = new EventEmitter<any>();
+
+  showEpInfo(episode: any) {
+    this.infoRequested.emit(episode);
+  }
 }

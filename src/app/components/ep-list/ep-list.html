@@ -1,0 +1,17 @@
+<div class="flex gap-4 border border-blue-100 bg-white rounded-lg overflow-clip shadow-2xl group">
+    <div class="w-sm overflow-clip relative rounded-r-lg">
+        <img src={{episode?.epThumbnail}} alt="" class="group-hover:scale-105 transition-transform">
+        <button class="bg-blue-950 text-white absolute bottom-0 w-full text-sm p-2"><i class='bx bx-check'></i>
+            Watched</button>
+    </div>
+    <div class="py-2">
+        <p class="font-bold line-clamp-1 text-2xl">
+            <span class="text-amber-500">{{currentSeason}}x{{episode?.epNo?.toString()?.padStart(2,
+                '0')}}</span> {{episode?.epTitle}}
+        </p>
+        <p class="text-sm">
+            {{episode?.epAired | date: 'h:mm a EEEE, MMMM d, y'}}
+        </p>
+        <p class="text-sm mt-4">{{episode?.epDesc}}</p>
+    </div>
+</div>

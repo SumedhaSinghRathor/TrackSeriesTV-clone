@@ -1,11 +1,11 @@
 <div class="shadow-2xl aspect-5/3 group rounded-xl overflow-clip">
     <div class="overflow-clip">
-        <img src={{episode?.epThumbnail}} alt="">
+        <img src={{episode?.epThumbnail}} alt="" class="hover:scale-105 transition-transform">
     </div>
-    <div class="p-2 border-t-3 border-blue-950 text-sm">
+    <div class="p-2 border-t-3 border-blue-950 text-sm cursor-pointer" (click)="showEpInfo(episode)">
         <p class="font-bold line-clamp-1">
-            <span class="text-amber-500">{{currentSeason}}x{{episode?.epNo?.toString()?.padStart(2,
-                '0')}}</span> {{episode?.epTitle}}
+            <span class="text-amber-500">{{currentSeason}}x{{episode?.epNo?.toString()?.padStart(2, '0')}}</span>
+            {{episode?.epTitle}}
         </p>
         <p>
             {{episode?.epAired | date: 'h:mm a EEEE, MMMM d, y'}}

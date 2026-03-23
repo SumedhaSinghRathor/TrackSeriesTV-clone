@@ -4,16 +4,20 @@ import { CommonModule, DatePipe, UpperCasePipe } from '@angular/common';
 import { ShowApi } from '../../service/show-api';
 import { ActivatedRoute } from '@angular/router';
 import { EpGrid } from '../../components/ep-grid/ep-grid';
+import { EpList } from '../../components/ep-list/ep-list';
+import { Extra } from '../../components/extra/extra';
 
 @Component({
   selector: 'app-show-page',
   standalone: true,
-  imports: [CommonModule, DatePipe, UpperCasePipe, EpGrid],
+  imports: [CommonModule, DatePipe, UpperCasePipe, EpGrid, EpList, Extra],
   templateUrl: './show-page.html',
 })
 export class ShowPage implements OnInit {
   show?: Show;
-  currentSeason: any;
+  currentSeason: number = 1;
+  gridView: boolean = true;
+  selectedEpisode: any;
 
   constructor(
     private showService: ShowApi,

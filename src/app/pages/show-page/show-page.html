@@ -3,7 +3,7 @@
 </div>
 <div class="aspect-5/2 bg-black/60 text-white text-5xl font-bold flex flex-col gap-4 items-center justify-center">
     <h1>{{show?.title}}</h1>
-    <h2>({{show?.seasons?.[0]?.startedAiring | date: 'yyyy'}})</h2>
+    <h2>({{show?.seasons?.[0]?.episodes?.[0]?.epAired | date: 'yyyy'}})</h2>
 </div>
 <section class="bg-slate-50 grid grid-cols-[2fr_3fr_2fr] gap-x-16 p-3 -mt-4 rounded-t-2xl">
     <div class="flex justify-end h-46">
@@ -44,10 +44,16 @@
 <div class="bg-slate-50 p-6">
     <div class="flex items-center gap-4 mb-4">
         <h2 class="text-2xl font-bold grow">Season {{currentSeason}}</h2>
-        <i class="bx bx-grid-alt text-white bg-blue-950 text-lg p-2 rounded"></i>
+        <i [class.bx-grid-alt]="gridView" [class.bx-list-ul]="!gridView"
+            class="bx text-white bg-blue-950 text-lg p-2 rounded" (click)="gridView = !gridView"></i>
     </div>
-    <section class="grid grid-cols-4 gap-6">
+    <section *ngIf="!gridView" class="flex flex-col gap-6">
+        <app-ep-list *ngFor="let ep of show?.seasons?.[currentSeason - 1]?.episodes" [episode]="ep"
+            [currentSeason]="currentSeason"></app-ep-list>
+    </section>
+    <section *ngIf="gridView" class="grid grid-cols-4 gap-6">
         <app-ep-grid *ngFor="let ep of show?.seasons?.[currentSeason - 1]?.episodes" [episode]="ep"
-            [currentSeason]="currentSeason"></app-ep-grid>
+            [currentSeason]="currentSeason" (infoRequested)="selectedEpisode = $event"></app-ep-grid>
     </section>
 </div>
+<app-extra [episodeData]="selectedEpisode"></app-extra>
