@@ -6,6 +6,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EpGrid } from '../../components/ep-grid/ep-grid';
 import { EpList } from '../../components/ep-list/ep-list';
 import { Extra } from '../../components/extra/extra';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-show-page',
@@ -23,6 +24,7 @@ export class ShowPage implements OnInit {
     private showService: ShowApi,
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
+    private titleService: Title,
   ) {}
 
   ngOnInit(): void {
@@ -39,20 +41,13 @@ export class ShowPage implements OnInit {
     this.showService.getShow(id).subscribe({
       next: (data) => {
         this.show = data;
-        console.log(data);
+        this.titleService.setTitle(`TrackSeries TV - ${data.title}`);
         this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error loading show: ', err);
       },
     });
-  }
-
-  getEpisodeDate(startDatestr: string | undefined, epNo: number): Date | null {
-    if (!startDatestr) return null;
-    const date = new Date(startDatestr);
-    date.setDate(date.getDate() + (epNo - 1) * 7);
-    return date;
   }
 
   makeSlug(title: any): string {
