@@ -61,4 +61,8 @@ export class ShowPage implements OnInit {
       .replace(/[^a-zA-Z0-9]/g, '-')
       .replace(/(^-|-$)/g, '');
   }
+
+  sharePage() {
+    this.showService.shareCurrentPage();
+  }
 }

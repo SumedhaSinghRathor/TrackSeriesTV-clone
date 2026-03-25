@@ -18,4 +18,22 @@ export class ShowApi {
   getShow(id: number): Observable<Show> {
     return this.http.get<Show>(`${this.apiUrl}/${id}`);
   }
+
+  shareCurrentPage(): void {
+    const currentUrl = window.location.href;
+    const pageTitle = document.title;
+
+    if (navigator.share) {
+      navigator
+        .share({
+          title: pageTitle,
+          url: currentUrl,
+        })
+        .then(() => {
+          console.log('Page shared successfully');
+        });
+    } else {
+      console.log('Web Share API not supported');
+    }
+  }
 }

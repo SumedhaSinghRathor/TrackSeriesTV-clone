@@ -7,7 +7,7 @@
 </div>
 <section class="bg-slate-50 grid grid-cols-[2fr_3fr_2fr] gap-x-16 p-3 -mt-4 rounded-t-2xl">
     <div class="flex justify-end h-46">
-        <img src={{show?.seasons?.[0]?.poster}} alt="" class="aspect-17/25 w-40 -mt-12 shadow-2xl rounded border">
+        <img src={{show?.seasons?.at(-1)?.poster}} alt="" class="aspect-17/25 w-40 -mt-12 shadow-2xl rounded border">
     </div>
     <div>
         <div class="text-xl mb-2 flex gap-2 items-center">
@@ -16,7 +16,7 @@
                 <b>{{show?.seasons?.[0]?.episodes?.[0]?.epAired |
                     date: 'h:mm a' | uppercase}}</b> on <b>{{show?.network}}</b>
             </p>
-            <i class="bx bxs-share-alt opacity-80"></i>
+            <i class="bx bxs-share-alt opacity-80" (click)="sharePage()"></i>
         </div>
         <p class="text-[13px]">{{show?.description}}</p>
     </div>
