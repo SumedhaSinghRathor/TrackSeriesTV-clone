@@ -296,14 +296,14 @@
             },
             {
               "epNo": 12,
-              "epTitle": "Episode 12",
+              "epTitle": "FLY",
               "epThumbnail": "https://static.trackseries.tv/banners/placeholder/episode.png",
               "epDesc": null,
               "epAired": "2026-03-21T21:30:00Z"
             },
             {
               "epNo": 13,
-              "epTitle": "Episode 13",
+              "epTitle": "I've Made Up My Mind",
               "epThumbnail": "https://static.trackseries.tv/banners/placeholder/episode.png",
               "epDesc": null,
               "epAired": "2026-03-28T21:30:00Z"
@@ -977,6 +977,138 @@
         }
       ],
       "id": 6
+    },
+    {
+      "title": "When Life Gives You Tangerines",
+      "bgBanner": "https://static.trackseries.tv/banners/mwczMJeoQrsPERcyP1e900jo3Jv.jpg",
+      "smallBanner": "https://static.trackseries.tv/banners/series/428338/banners/67cb234d63b64_large.jpg",
+      "network": "Netflix",
+      "country": "KR",
+      "contentRating": null,
+      "showStatus": "Ended",
+      "followers": 87,
+      "description": "In Jeju, a spirited girl and a steadfast boy's island story blossoms into a lifelong tale of setbacks and triumphs — proving love endures across time.",
+      "seasons": [
+        {
+          "season": 1,
+          "poster": "https://static.trackseries.tv/banners/1VC3sEFxYXYDqQUCAnvWfUsYg1s_medium.jpg",
+          "episodes": [
+            {
+              "epNo": 1,
+              "epTitle": "Spring in a Heartbeat",
+              "epThumbnail": "https://static.trackseries.tv/banners/7NZeS2RsCDb7m8QeB3jDf0EkAd_small.jpg",
+              "epDesc": "Raised by a tenacious mother, a young, bright-eyed Ae-sun has dreams bigger than her village — until an unexpected tragedy changes everything.",
+              "epAired": "2025-03-07T12:30:00Z"
+            },
+            {
+              "epNo": 2,
+              "epTitle": "Sassy First Love",
+              "epThumbnail": "https://static.trackseries.tv/banners/eJ3uRHVwn1qHNfGfHaxBM3ePQJX_small.jpg",
+              "epDesc": "As love blossoms between Ae-sun and Gwan-sik, they make their first bold move together. But their romantic adventure hits a snag.",
+              "epAired": "2025-03-07T12:30:00Z"
+            },
+            {
+              "epNo": 3,
+              "epTitle": "Yesterday Was Your Spring",
+              "epThumbnail": "https://static.trackseries.tv/banners/9zNntKC89arsqaDXzwjqpsdXSCC_small.jpg",
+              "epDesc": "After a dramatic rescue, Ae-sun and Gwan-sik return to Jeju. Soon, Ae-sun resigns herself to a sad fate — leaving Gwan-sik devastated.",
+              "epAired": "2025-03-07T12:30:00Z"
+            },
+            {
+              "epNo": 4,
+              "epTitle": "The Blazing Summer Sunshine",
+              "epThumbnail": "https://static.trackseries.tv/banners/vw1mCoPLA5KX2UKcA7m1xoJCM67_small.jpg",
+              "epDesc": "Summer brings joy as the newlyweds start a life together, but living with Gwan-sik's family tests their happiness — can they find a path to peace?",
+              "epAired": "2025-03-07T12:30:00Z"
+            },
+            {
+              "epNo": 5,
+              "epTitle": "A Midsummer Night's Full Nets",
+              "epThumbnail": "https://static.trackseries.tv/banners/1xdpxqjXZNB2UmWUtMgcx83rdgj_small.jpg",
+              "epDesc": "As Gwan-sik struggles to find work, Ae-sun worries for her family — until a lifeline appears. Soon after, Ae-sun sets her ambitions higher in Jeju.",
+              "epAired": "2025-03-14T12:30:00Z"
+            },
+            {
+              "epNo": 6,
+              "epTitle": "Life Goes on and On",
+              "epThumbnail": "https://static.trackseries.tv/banners/gcQ1iKpaCdAW7SXb0sb4gbCJXWv_small.jpg",
+              "epDesc": "Just as Ae-sun and Gwan-sik taste the joys of their new life, a summer storm changes everything — testing their will to carry on.",
+              "epAired": "2025-03-14T12:30:00Z"
+            },
+            {
+              "epNo": 7,
+              "epTitle": "A Fruitfull Fall",
+              "epThumbnail": "https://static.trackseries.tv/banners/pYik2gc8A04rQ6XHeUMPXFeklCr_small.jpg",
+              "epDesc": "As the village chief election approaches, Ae-sun faces corrupt opposition. Geum-myeong receives an unusual request that tests her morals.",
+              "epAired": "2025-03-14T12:30:00Z"
+            },
+            {
+              "epNo": 8,
+              "epTitle": "The Moon Wanes, Yet the Young Heart Remains",
+              "epThumbnail": "https://static.trackseries.tv/banners/2xd5RKw18f5lHU4xYSwaokdcDpk_small.jpg",
+              "epDesc": "When Geum-myeong receives a chance to study in Japan, dreams take flight. Now Ae-sun and Gwan-sik must make a tough decision.",
+              "epAired": "2025-03-14T12:30:00Z"
+            },
+            {
+              "epNo": 9,
+              "epTitle": "The Wind Goes Whoosh, My Heart Goes Boo-Hoo",
+              "epThumbnail": "https://static.trackseries.tv/banners/l8tsUtKuKAJroL0zLDXkBeVfSer_small.jpg",
+              "epDesc": "Life in a small apartment tests Ae-sun and Gwan-sik as they struggle to parent Yang Eun-myeong. Meanwhile, Geum-myeong juggles love and life in Seoul.",
+              "epAired": "2025-03-21T12:30:00Z"
+            },
+            {
+              "epNo": 10,
+              "epTitle": "The Storm Sweeps My Heart, the Love Rocks My Heart",
+              "epThumbnail": "https://static.trackseries.tv/banners/pwkopTt76EgBgqPDLoh8WA3ly0U_small.jpg",
+              "epDesc": "While Geum-myeong grows closer to her quirky colleague, Ae-sun's troubling dreams stir real concerns. Do they hold any meaning?",
+              "epAired": "2025-03-21T12:30:00Z"
+            },
+            {
+              "epNo": 11,
+              "epTitle": "My Love by My Side",
+              "epThumbnail": "https://static.trackseries.tv/banners/pPJ0dlSCj8HsZX6gZte7lYnJpF5_small.jpg",
+              "epDesc": "As Geum-myeong's engagement moves toward marriage, her heart fills with doubt — will her first love story find its happy ending like her mother's?",
+              "epAired": "2025-03-21T12:30:00Z"
+            },
+            {
+              "epNo": 12,
+              "epTitle": "A Glistening Winter",
+              "epThumbnail": "https://static.trackseries.tv/banners/wizdl0A0iRtMpyHuj6ww6g851um_small.jpg",
+              "epDesc": "Back in Jeju, Geum-myeong mends her heart in familiar surroundings. Ae-sun treasures sweet moments with her loved ones.",
+              "epAired": "2025-03-21T12:30:00Z"
+            },
+            {
+              "epNo": 13,
+              "epTitle": "Such an Uneven Love",
+              "epThumbnail": "https://static.trackseries.tv/banners/6lXUWf7SHFqcdHlhIip3CDaz6lS_small.jpg",
+              "epDesc": "While facing a career setback during an economic downturn, Geum-myeong encounters a familiar face — sparking an unexpected new beginning.",
+              "epAired": "2025-03-28T12:30:00Z"
+            },
+            {
+              "epNo": 14,
+              "epTitle": "Spread Your Wings and Fly",
+              "epThumbnail": "https://static.trackseries.tv/banners/1Z6yGbOgHIfxqb3C25kjOIl6kEq_small.jpg",
+              "epDesc": "Ae-sun and Gwan-sik grapple with Yang Eun-myeong's misfortune, sacrificing everything they can to help him. But Eun-myeong's self-confidence takes a hit.",
+              "epAired": "2025-03-28T12:30:00Z"
+            },
+            {
+              "epNo": 15,
+              "epTitle": "A Spring Every Day",
+              "epThumbnail": "https://static.trackseries.tv/banners/V3bupKEMet32iQ9fYnKa0j2WDU_small.jpg",
+              "epDesc": "Between new business ventures and career changes, the family faces separate hurdles on their paths — drawing strength from their bond to press ahead.",
+              "epAired": "2025-03-28T12:30:00Z"
+            },
+            {
+              "epNo": 16,
+              "epTitle": "Here's to All You've Been Through",
+              "epThumbnail": "https://static.trackseries.tv/banners/u2XhQS7JAk9mUBSqcpF6by47Ds7_small.jpg",
+              "epDesc": "As the Yang family finally enjoys the fruits of their labor, sudden agony strikes — testing their resolve and the strength of their enduring love.",
+              "epAired": "2025-03-28T12:30:00Z"
+            }
+          ]
+        }
+      ],
+      "id": 7
     }
   ]
 }
