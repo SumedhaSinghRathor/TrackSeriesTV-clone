@@ -52,11 +52,11 @@
                         class="border-t border-blue-100 hover:bg-blue-100 transition-colors group">
                         <td class="py-1 w-3xs">
                             <div class="w-3xs overflow-hidden">
-                                <img src={{show?.smallBanner}} alt=""
-                                    class="group-hover:scale-105 transition-transform">
+                                <img src={{show.smallBanner}} alt="" class="group-hover:scale-105 transition-transform">
                             </div>
                         </td>
-                        <td>{{show.title}}</td>
+                        <td><a [routerLink]="goToShow(show)">{{show.title}}</a>
+                        </td>
                         <td><span class="bg-blue-950 text-white px-2 rounded-full">{{show.seasons.length}}</span></td>
                         <td>{{show.seasons[0].episodes[0].epAired | date: 'yyyy'}}</td>
                     </tr>

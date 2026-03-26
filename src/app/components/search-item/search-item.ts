@@ -20,6 +20,6 @@ export class SearchItem {
 
   goToShow(show: Show) {
     const slug = this.makeSlug(show.title);
-    return ['/shows', show.id, slug, show.seasons[0].season];
+    return ['/shows', show.id, slug, show.seasons?.at(-1)?.season];
   }
 }
