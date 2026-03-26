@@ -1,1 +1,28 @@
-<section class="bg-white">calendar works!</section>
+<section class="bg-slate-50 mt-12 h-[86vh] flex flex-col">
+    <div class="text-2xl flex justify-between items-center p-2">
+        <button class='bx bx-chevron-left' (click)="prevMonth()"></button>
+        <h2>{{getMonthYear()}}</h2>
+        <button class='bx bx-chevron-right' (click)="nextMonth()"></button>
+    </div>
+    <table class="border w-full">
+        <thead>
+            <tr class="w-full">
+                <th *ngFor="let d of ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']" class="w-1/7">{{d}}</th>
+            </tr>
+        </thead>
+        <tbody class="overflow-scroll grow">
+            <tr *ngFor="let week of weeks">
+                <td *ngFor="let day of week" class="border p-1 align-top">
+                    <ng-container *ngIf="day">
+                        <div class="text-sm font-semibold text-end">{{day}}</div>
+
+                        <div *ngFor="let ep of getEpisodes(day)"
+                            class="bg-blue-950 text-white p-1 rounded mt-1 text-sm">
+                            {{ep.title}} - {{ep.ep}}
+                        </div>
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
