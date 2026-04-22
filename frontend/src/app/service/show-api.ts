@@ -20,7 +20,7 @@ export class ShowApi {
   }
 
   shareCurrentPage(): void {
-    const currentUrl = window.location.href;
+    const currentUrl = globalThis.location.href;
     const pageTitle = document.title;
 
     if (navigator.share) {
